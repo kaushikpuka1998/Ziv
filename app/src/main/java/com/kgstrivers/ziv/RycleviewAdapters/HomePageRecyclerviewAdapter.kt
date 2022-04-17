@@ -44,7 +44,6 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
             price.text = "₹"+data.price
             rate.setRating((data.rating.toFloat()))
             rate.setIsIndicator(true)
-
         }
     }
 
