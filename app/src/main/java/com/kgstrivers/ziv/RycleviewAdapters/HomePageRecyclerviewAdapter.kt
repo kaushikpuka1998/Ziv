@@ -1,11 +1,17 @@
 package com.kgstrivers.ziv.RycleviewAdapters
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.kgstrivers.ziv.Activities.ContentActivity
 import com.kgstrivers.ziv.Model.Product
 import com.kgstrivers.ziv.R
 import com.squareup.picasso.Picasso
@@ -19,8 +25,25 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
         return MyViewHolder(inflater)
     }
 
-    override fun onBindViewHolder(holder:  HomePageRecyclerviewAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder:  HomePageRecyclerviewAdapter.MyViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.bind(productslist[position])
+
+        holder.itemView.setOnClickListener(object :View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val intent = Intent(holder.itemView.context,ContentActivity::class.java)
+                intent.putExtra("name",productslist[position].name)
+                intent.putExtra("price",productslist[position].price)
+                //intent.putExtra()
+
+                var b = Bundle()
+                b.putInt("rating",productslist[position].rating)
+                intent.putExtras(b)
+                intent.putExtra("imgurl",productslist[position].image_url)
+
+
+                holder.itemView.context.startActivity(intent)
+            }
+        })
     }
 
     override fun getItemCount(): Int {
@@ -49,3 +72,4 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
 
 
 }
+
