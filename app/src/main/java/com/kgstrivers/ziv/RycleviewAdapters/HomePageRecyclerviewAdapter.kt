@@ -1,5 +1,7 @@
 package com.kgstrivers.ziv.RycleviewAdapters
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,12 +35,16 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
         val name = view.name
         val price = view.price
         val rate = view.ratebar
+        val star = rate.progressDrawable
+
         fun bind( data: Product)
         {
             Picasso.get().load(data.image_url).into(image)
             name.text = data.name
             price.text = "₹"+data.price
             rate.setRating((data.rating.toFloat()))
+            rate.setIsIndicator(true)
+
         }
     }
 
