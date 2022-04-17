@@ -32,11 +32,13 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
         val image = view.imageview
         val name = view.name
         val price = view.price
+        val rate = view.ratebar
         fun bind( data: Product)
         {
             Picasso.get().load(data.image_url).into(image)
             name.text = data.name
-            price.text = data.price
+            price.text = "₹"+data.price
+            rate.setRating((data.rating.toFloat()))
         }
     }
 

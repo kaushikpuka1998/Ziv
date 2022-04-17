@@ -25,4 +25,19 @@
         android:layout_marginTop="25dp"
         android:text="Price"/>
 
+    <RatingBar
+        android:id="@+id/ratebar"
+        style="@style/RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="55dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:max="5"
+        android:scaleX="0.25"
+        android:scaleY="0.25"
+        android:transformPivotX="0dp" />
+
 </RelativeLayout>
