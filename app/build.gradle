@@ -51,5 +51,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
     implementation group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '5.0.0-alpha.6'
 
+    // https://mvnrepository.com/artifact/com.squareup.picasso/picasso
+    implementation group: 'com.squareup.picasso', name: 'picasso', version: '2.71828'
 
 }

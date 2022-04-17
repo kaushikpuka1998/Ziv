@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kgstrivers.ziv.Model.Product
 import com.kgstrivers.ziv.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.singleelementrecyclerview.view.*
 
 class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdapter.MyViewHolder>(){
@@ -33,6 +34,7 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
         val price = view.price
         fun bind( data: Product)
         {
+            Picasso.get().load(data.image_url).into(image)
             name.text = data.name
             price.text = data.price
         }
