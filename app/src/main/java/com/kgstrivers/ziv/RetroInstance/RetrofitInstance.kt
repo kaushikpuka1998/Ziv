@@ -1,4 +1,4 @@
-package com.kgstrivers.ziv
+package com.kgstrivers.ziv.RetroInstance
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
