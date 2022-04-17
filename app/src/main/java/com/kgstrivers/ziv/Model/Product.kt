@@ -1,10 +1,8 @@
 package com.kgstrivers.ziv.Model
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
-
-
-
 
 data class Product(
     val image_url: String,
