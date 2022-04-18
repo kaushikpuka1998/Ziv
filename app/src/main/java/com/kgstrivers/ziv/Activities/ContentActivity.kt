@@ -68,6 +68,9 @@ class ContentActivity : AppCompatActivity() {
 
                Log.d("Success MSG","Data inserted into Room " +this@ContentActivity)
 
+                val b = Intent(this@ContentActivity,CartActivity::class.java)
+                startActivity(b)
+
             }
         })
 
