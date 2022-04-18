@@ -34,6 +34,10 @@ class CartPageRecyclerViewAdapter: RecyclerView.Adapter<CartPageRecyclerViewAdap
         return productslist.size
     }
 
+
+    fun getItemCountcheck(): Int {
+        return productslist.size
+    }
     @SuppressLint("LongLogTag")
     fun returnproduct(id:Int):CartProduct{
         Log.d("CHECKING return product POSITION",id.toString())

@@ -2,12 +2,14 @@ package com.kgstrivers.ziv.Activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -31,6 +33,7 @@ class CartActivity : AppCompatActivity() {
     lateinit var cartadapter :CartPageRecyclerViewAdapter
     lateinit var cartpageViewmodel: CartViewModel
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
@@ -41,20 +44,81 @@ class CartActivity : AppCompatActivity() {
 
         calldata(this)
 
+
+        submitanimation2.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                submitanimation2.playAnimation()
+            }
+        })
+
+
         finalplacebutton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
 
+
                 GlobalScope.launch(Dispatchers.IO) {
+
+                    if(cartadapter.getItemCountcheck() == 0)
+                    {
+
+                    }
+                    else
+                    {
                         Cartprod.getInstance(this@CartActivity).prodDao().deleteAll();
-                    calldata(this@CartActivity)
+                        calldata(this@CartActivity)
+                    }
+
+                }
+
+                if(cartadapter.getItemCountcheck() != 0)
+                {
+                    Handler(Looper.getMainLooper()).postDelayed({
+
+                        relative.visibility =View.GONE
+                        bottom.visibility = View.GONE
+                        submitanimation1.visibility = View.VISIBLE
+
+                        val thread2: Thread = object : Thread() {
+                            override fun run() {
+                                try {
+                                    sleep(7000)
+                                    submitanimation2.playAnimation()
+
+
+
+                                } catch (e: Exception) {
+                                    e.printStackTrace()
+                                }
+                                finally{
+                                    val u = Intent(applicationContext, MainActivity::class.java)
+                                    //Toast.makeText(this@CartActivity,"Order Placed Successfully",Toast.LENGTH_SHORT).show()
+                                    startActivity(u)
+
+
+
+
+
+                                }
+                            }
+                        }
+                        thread2.start()
+
+                    },1)
+                }else
+                {
+                    Toast.makeText(this@CartActivity,"Cart is Empty",Toast.LENGTH_SHORT).show()
                 }
 
 
-                Toast.makeText(this@CartActivity,"Order Placed Successfully",Toast.LENGTH_SHORT).show()
+
+
+
+
+
+
             }
 
         })
-
 
 
     }
