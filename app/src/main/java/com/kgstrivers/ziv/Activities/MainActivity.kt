@@ -39,7 +39,9 @@ class MainActivity : AppCompatActivity() {
     {
         recycleview.apply{
             layoutManager = LinearLayoutManager(this@MainActivity)
-            val decor = DividerItemDecoration(this@MainActivity,DividerItemDecoration.HORIZONTAL)
+            val decor = DividerItemDecoration(this@MainActivity,DividerItemDecoration.VERTICAL)
+
+            getDrawable(R.drawable.rounded!!)?.let { decor.setDrawable(it) }
 
             addItemDecoration(decor)
 

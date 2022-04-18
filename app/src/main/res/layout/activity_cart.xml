@@ -71,6 +71,7 @@
                 android:text="Price"/>
 
             <Button
+                android:id="@+id/finalplacebutton"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:text="Place Order"

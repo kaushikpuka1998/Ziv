@@ -16,6 +16,10 @@ interface ProductDAO {
     suspend fun delete(cartProduct: CartProduct)
 
 
+    @Query("Delete  from cartProducts")
+    suspend fun deleteAll()
+
+
     @Update
     suspend fun update(product: CartProduct)
 

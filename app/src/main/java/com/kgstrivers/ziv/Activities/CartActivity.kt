@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kgstrivers.ziv.Callbacks.SwipeGesture
 import com.kgstrivers.ziv.Model.CartProduct
 import com.kgstrivers.ziv.R
+import com.kgstrivers.ziv.RoomDatabase.Cartprod
 import com.kgstrivers.ziv.RycleviewAdapters.CartPageRecyclerViewAdapter
 import com.kgstrivers.ziv.ViewModels.CartViewModel
 import kotlinx.android.synthetic.main.activity_cart.*
@@ -38,6 +40,20 @@ class CartActivity : AppCompatActivity() {
         initiateViewmodel()
 
         calldata(this)
+
+        finalplacebutton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+
+                GlobalScope.launch(Dispatchers.IO) {
+                        Cartprod.getInstance(this@CartActivity).prodDao().deleteAll();
+                    calldata(this@CartActivity)
+                }
+
+
+                Toast.makeText(this@CartActivity,"Order Placed Successfully",Toast.LENGTH_SHORT).show()
+            }
+
+        })
 
 
 
