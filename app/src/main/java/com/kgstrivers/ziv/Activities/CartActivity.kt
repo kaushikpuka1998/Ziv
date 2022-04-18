@@ -3,8 +3,9 @@ package com.kgstrivers.ziv.Activities
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -92,13 +93,14 @@ class CartActivity : AppCompatActivity() {
 
     private fun initiateViewmodel()
     {
-        var sum = 0.0
+
         cartpageViewmodel =  ViewModelProvider(this).get(CartViewModel::class.java)
         cartpageViewmodel.getCartProductsLiveDataobserver().observe( this,{
 
 
             if(it!=null)
             {
+                var sum = 0.0
                 cartadapter.productslist = it as MutableList<CartProduct>
 
                 for(item in cartadapter.productslist)
@@ -116,7 +118,7 @@ class CartActivity : AppCompatActivity() {
 
         })
     }
-    
+
     private fun calldata(context:Context)
     {
         cartpageViewmodel.getProductList(context)
@@ -124,8 +126,30 @@ class CartActivity : AppCompatActivity() {
 
     private suspend fun deletedata( context: Context,cartProduct: CartProduct)
     {
+
+
+        val handler = Handler(Looper.getMainLooper())
+//        handler.post({
+//            var tmp1= totalprice.text.toString().toFloat();
+//            var tmp2 = cartProduct.price!!.toFloat()
+//
+//            var tmp3 = tmp1 - tmp2
+//            Log.d("Tmp1:", tmp1.toString())
+//            Log.d("Tmp2:", tmp2.toString())
+//            Log.d("Tmp3:", tmp3.toString())
+//
+//            //totalprice.text = (tmp3).toString()
+//        })
+
         cartpageViewmodel.deleteProductList(context,cartProduct)
+
+
+
         calldata(context)
+
+
+
+
 
 
 
