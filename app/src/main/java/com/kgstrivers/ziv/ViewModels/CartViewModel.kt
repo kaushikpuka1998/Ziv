@@ -18,6 +18,7 @@ import java.security.AccessController.getContext
 class CartViewModel : ViewModel()  {
 
     lateinit var listdata : MutableLiveData<List<CartProduct>>
+    var sum = 0.0
     init{
         listdata = MutableLiveData()
     }
@@ -47,5 +48,6 @@ class CartViewModel : ViewModel()  {
             listdata.postValue(list)
 
     }
+
 }
 

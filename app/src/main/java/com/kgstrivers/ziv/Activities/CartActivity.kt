@@ -23,6 +23,8 @@ class CartActivity : AppCompatActivity() {
 
     lateinit var cartadapter :CartPageRecyclerViewAdapter
     lateinit var cartpageViewmodel: CartViewModel
+
+    var sum = 0.0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
@@ -32,7 +34,6 @@ class CartActivity : AppCompatActivity() {
         initiateViewmodel()
 
         calldata(this)
-
 
     }
 
@@ -59,7 +60,14 @@ class CartActivity : AppCompatActivity() {
             if(it!=null)
             {
                 cartadapter.productslist = it as MutableList<CartProduct>
+
+                for(item in cartadapter.productslist)
+                {
+                    sum+= item.price!!.toFloat()
+                }
+               totalprice.text = sum.toString()
                 cartadapter.notifyDataSetChanged()
+
             }
             else
             {
@@ -71,6 +79,12 @@ class CartActivity : AppCompatActivity() {
     private fun calldata(context:Context)
     {
         cartpageViewmodel.getProductList(context)
+    }
+
+
+    private fun sumprice(context: Context)
+    {
+
     }
 }
 
