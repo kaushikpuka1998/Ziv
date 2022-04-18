@@ -45,9 +45,9 @@ class CartActivity : AppCompatActivity() {
         calldata(this)
 
 
-        submitanimation2.setOnClickListener(object : View.OnClickListener {
+        submitanimation1.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
-                submitanimation2.playAnimation()
+                submitanimation1.playAnimation()
             }
         })
 
@@ -82,7 +82,7 @@ class CartActivity : AppCompatActivity() {
                             override fun run() {
                                 try {
                                     sleep(7000)
-                                    submitanimation2.playAnimation()
+                                    submitanimation1.playAnimation()
 
 
 
