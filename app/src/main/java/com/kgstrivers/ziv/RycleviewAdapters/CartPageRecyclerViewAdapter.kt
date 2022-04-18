@@ -36,7 +36,7 @@ class CartPageRecyclerViewAdapter: RecyclerView.Adapter<CartPageRecyclerViewAdap
 
         fun bind(data: CartProduct)
         {
-            Picasso.get().load(data.image_url).into(image)
+            Picasso.get().load(data.image_url).resize(250,250).centerCrop().into(image)
             name.text = data.name
             price.text = "₹"+data.price
             rate.setRating((data.rating!!.toFloat()))

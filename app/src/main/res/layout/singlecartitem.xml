@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
 
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:padding="5dp"
+        android:singleLine="true"
         android:text="Name" />
 
 
@@ -22,14 +23,16 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="25dp"
         android:padding="5dp"
+        android:minLines="2"
         android:text="price" />
 
     <ImageView
         android:id="@+id/cartsingleimage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
+        android:layout_width="480dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="300dp"
         android:layout_weight="1"
+        android:layout_marginTop="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <RatingBar

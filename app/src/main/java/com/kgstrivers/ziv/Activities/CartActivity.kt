@@ -1,6 +1,7 @@
 package com.kgstrivers.ziv.Activities
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -16,6 +17,7 @@ import com.kgstrivers.ziv.ViewModels.CartViewModel
 import com.kgstrivers.ziv.ViewModels.HomepageViewmodel
 import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.math.round
 
 class CartActivity : AppCompatActivity() {
 
@@ -38,7 +40,8 @@ class CartActivity : AppCompatActivity() {
     {
         cartrecycleview.apply{
             layoutManager = LinearLayoutManager(this@CartActivity)
-            val decor = DividerItemDecoration(this@CartActivity, DividerItemDecoration.HORIZONTAL)
+            val decor = DividerItemDecoration(this@CartActivity, DividerItemDecoration.VERTICAL)
+            getDrawable(R.drawable.rounded!!)?.let { decor.setDrawable(it) }
 
             addItemDecoration(decor)
 
@@ -70,3 +73,4 @@ class CartActivity : AppCompatActivity() {
         cartpageViewmodel.getProductList(context)
     }
 }
+
