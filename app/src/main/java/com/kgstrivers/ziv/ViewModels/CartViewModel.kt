@@ -1,7 +1,9 @@
 package com.kgstrivers.ziv.ViewModels
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -30,24 +32,24 @@ class CartViewModel : ViewModel()  {
 
     fun getProductList(context: Context)
     {
-
         GlobalScope.launch(Dispatchers.IO) {
-
             makeDatabasecall(context)
-
         }
 
     }
-
     suspend fun makeDatabasecall(context:Context)
     {
-
             val productDao = Cartprod.getInstance(context).prodDao()
             val list = productDao?.display()
-
             listdata.postValue(list)
+    }
+
+    suspend fun deleteProductList(context: Context,cartProduct: CartProduct) {
+        val productDao = Cartprod.getInstance(context).prodDao()
+        productDao?.delete(cartProduct)
 
     }
+
 
 }
 

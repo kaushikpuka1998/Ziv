@@ -8,7 +8,7 @@ import com.kgstrivers.ziv.Model.CartProduct
 import com.kgstrivers.ziv.NetworkInterface.ProductDAO
 
 
-@Database(entities = [CartProduct::class], version = 1, exportSchema = false)
+@Database(entities = [CartProduct::class], version = 2, exportSchema = false)
 abstract class Cartprod : RoomDatabase()  {
 
     abstract fun prodDao() : ProductDAO

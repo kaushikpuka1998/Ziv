@@ -57,11 +57,19 @@ class ContentActivity : AppCompatActivity() {
         addtocart.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
 
-                val cartsingleproduct = CartProduct(null,imgurl.toString(),name.toString(),price.toString(),rating)
+                val cartsingleproduct = CartProduct(imgurl.toString(),name.toString(),price.toString(),rating)
 
                GlobalScope.launch(Dispatchers.IO) {
 
-                   Cartprod.getInstance(this@ContentActivity).prodDao().insert(cartsingleproduct)
+                   if(Cartprod.getInstance(this@ContentActivity).prodDao().isproductAdded(cartsingleproduct.image_url) == 1)
+                   {
+                        //Toast.makeText(this@ContentActivity,"Already In Cart",Toast.LENGTH_SHORT).show()
+                   }
+                   else
+                   {
+                       Cartprod.getInstance(this@ContentActivity).prodDao().insert(cartsingleproduct)
+                   }
+
 
                }
                 Toast.makeText(this@ContentActivity,"Product Added into the Cart",Toast.LENGTH_SHORT).show()

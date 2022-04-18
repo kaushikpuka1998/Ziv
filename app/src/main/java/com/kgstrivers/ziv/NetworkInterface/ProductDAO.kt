@@ -12,8 +12,8 @@ interface ProductDAO {
     @Insert
     suspend fun insert(product: CartProduct)
 
-    @Query("DELETE FROM cartProducts WHERE uid =:uid")
-    suspend fun delete(uid:Int)
+    @Delete
+    suspend fun delete(cartProduct: CartProduct)
 
 
     @Update
@@ -22,5 +22,8 @@ interface ProductDAO {
 
     @Query("SELECT * from cartProducts")
     suspend fun display():List<CartProduct>
+
+    @Query("SELECT EXISTS (SELECT 1 FROM cartProducts WHERE image_url= :image_url)")
+    suspend fun isproductAdded(image_url: String): Int
 
 }
