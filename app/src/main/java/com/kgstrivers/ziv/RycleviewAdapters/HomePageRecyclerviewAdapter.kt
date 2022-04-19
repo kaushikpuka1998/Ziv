@@ -30,6 +30,7 @@ class HomePageRecyclerviewAdapter :RecyclerView.Adapter<HomePageRecyclerviewAdap
 
         holder.itemView.setOnClickListener(object :View.OnClickListener{
             override fun onClick(p0: View?) {
+
                 val intent = Intent(holder.itemView.context,ContentActivity::class.java)
                 intent.putExtra("name",productslist[position].name)
                 intent.putExtra("price",productslist[position].price)

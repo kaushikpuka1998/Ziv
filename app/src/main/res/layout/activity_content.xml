@@ -53,9 +53,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="552dp"
-        android:text="Add To Cart"
         android:backgroundTint="#FF9800"
+        android:text="Add To Cart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/addtocartanimation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="45dp"
+            app:lottie_rawRes="@raw/aadtocart"
+            />
+
+
 </RelativeLayout>
+
