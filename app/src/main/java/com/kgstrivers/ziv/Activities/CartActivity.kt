@@ -133,7 +133,8 @@ class CartActivity : AppCompatActivity() {
                     {
                         ItemTouchHelper.RIGHT->{
 
-                        GlobalScope.launch(Dispatchers.IO) {
+                        GlobalScope.launch(Dispatchers.IO)
+                        {
 
 
                             var willbedeleted = cartadapter.returnproduct(viewHolder.adapterPosition)
