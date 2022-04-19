@@ -3,6 +3,8 @@ package com.kgstrivers.ziv.Activities
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.*
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -11,6 +13,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -84,8 +87,6 @@ class CartActivity : AppCompatActivity() {
                                     sleep(7000)
                                     submitanimation1.playAnimation()
 
-
-
                                 } catch (e: Exception) {
                                     e.printStackTrace()
                                 }
@@ -93,10 +94,6 @@ class CartActivity : AppCompatActivity() {
                                     val u = Intent(applicationContext, MainActivity::class.java)
                                     //Toast.makeText(this@CartActivity,"Order Placed Successfully",Toast.LENGTH_SHORT).show()
                                     startActivity(u)
-
-
-
-
 
                                 }
                             }
@@ -108,13 +105,6 @@ class CartActivity : AppCompatActivity() {
                 {
                     Toast.makeText(this@CartActivity,"Cart is Empty",Toast.LENGTH_SHORT).show()
                 }
-
-
-
-
-
-
-
 
             }
 
@@ -134,11 +124,9 @@ class CartActivity : AppCompatActivity() {
 
             cartadapter =CartPageRecyclerViewAdapter()
             adapter = cartadapter
-
-
-//
-            val swipegesture = object: SwipeGesture()
+            val swipegesture = object: SwipeGesture(this@CartActivity)
             {
+                @RequiresApi(Build.VERSION_CODES.N)
                 @SuppressLint("LongLogTag")
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                     when(direction)
@@ -158,6 +146,56 @@ class CartActivity : AppCompatActivity() {
                     }
 
                 }
+
+                private val deleteIcon = ContextCompat.getDrawable(context, R.drawable.ic_del)!!
+                private val intrinsicWidth = deleteIcon.intrinsicWidth
+                private val intrinsicHeight = deleteIcon.intrinsicHeight
+                private val background = ColorDrawable()
+                private val backgroundColor = Color.parseColor("#ff0000")
+                private val clearPaint = Paint().apply { xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR) }
+                override fun onChildDraw(
+                    c: Canvas,
+                    recyclerView: RecyclerView,
+                    viewHolder: RecyclerView.ViewHolder,
+                    dX: Float,
+                    dY: Float,
+                    actionState: Int,
+                    isCurrentlyActive: Boolean
+                ) {
+
+                    val itemView = viewHolder.itemView
+                    val itemHeight = itemView.bottom - itemView.top
+
+                    //Draw the red delete background
+
+                    background.color = backgroundColor
+                    background.setBounds(itemView.right + dX.toInt(), itemView.top, itemView.right, itemView.bottom)
+                    background.draw(c)
+
+                    //Calculate the position of the delete icon
+
+                    val deleteIconMargin = (itemHeight)
+                    val deleteIconTop = itemView.top + deleteIconMargin
+                    val deleteIconLeft = itemView.left
+                    val deleteIconRight = itemView.right+100
+                    val deleteIconBottom = itemView.bottom
+
+                    deleteIcon.setBounds(deleteIconLeft, deleteIconTop, deleteIconRight, deleteIconBottom)
+                    deleteIcon.draw(c)
+
+                    super.onChildDraw(
+                        c,
+                        recyclerView,
+                        viewHolder,
+                        dX,
+                        dY,
+                        actionState,
+                        isCurrentlyActive
+                    )
+                }
+
+
+
             }
             val touchHelper = ItemTouchHelper(swipegesture)
             touchHelper.attachToRecyclerView(cartrecycleview)

@@ -10,10 +10,7 @@ import com.kgstrivers.ziv.Model.CartProduct
 import com.kgstrivers.ziv.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.singlecartitem.view.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+
 
 class CartPageRecyclerViewAdapter: RecyclerView.Adapter<CartPageRecyclerViewAdapter.MyCartViewHolder>() {
 
