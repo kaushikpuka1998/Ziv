@@ -30,4 +30,5 @@ interface ProductDAO {
     @Query("SELECT EXISTS (SELECT 1 FROM cartProducts WHERE image_url= :image_url)")
     suspend fun isproductAdded(image_url: String): Int
 
+
 }

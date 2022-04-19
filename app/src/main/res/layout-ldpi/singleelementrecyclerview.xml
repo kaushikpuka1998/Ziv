@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="100dp"
+        android:layout_width="60dp"
         android:layout_height="100dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="7dp" />
@@ -15,7 +15,7 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="125dp"
+        android:layout_marginLeft="85dp"
         android:maxLines="1"
         android:textColor="@color/black"
         android:fontFamily="@font/roboto_bold"
@@ -24,7 +24,7 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="125dp"
+        android:layout_marginLeft="85dp"
         android:fontFamily="@font/roboto_bold"
         android:layout_marginTop="25dp"
         android:textColor="@color/black"
@@ -35,7 +35,7 @@
         style="@style/RatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="125dp"
+        android:layout_marginLeft="85dp"
         android:layout_marginTop="55dp"
         android:clickable="false"
         android:focusable="false"

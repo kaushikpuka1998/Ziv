@@ -25,6 +25,7 @@ import com.kgstrivers.ziv.RoomDatabase.Cartprod
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.activity_content.*
+import kotlinx.android.synthetic.main.customtoolbar.*
 import kotlinx.android.synthetic.main.singleelementrecyclerview.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -35,6 +36,14 @@ class ContentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content)
 
+
+        toolbarcart.setOnClickListener(object: View.OnClickListener{
+
+            override fun onClick(p0: View?) {
+                val r = Intent(applicationContext,CartActivity::class.java)
+                startActivity(r)
+            }
+        })
         val intent = getIntent()
 
         var imgurl = intent.getStringExtra("imgurl")
@@ -72,12 +81,8 @@ class ContentActivity : AppCompatActivity() {
                     override fun run() {
                         try {
                             sleep(2500)
-
                             visibilityopened()
                             //addtocartlayout.visibility = View.GONE
-
-
-
 
                         } catch (e: Exception) {
                             e.printStackTrace()
@@ -89,31 +94,22 @@ class ContentActivity : AppCompatActivity() {
 
                                 if(Cartprod.getInstance(this@ContentActivity).prodDao().isproductAdded(cartsingleproduct.image_url) == 1)
                                 {
-
                                     Looper.prepare()
                                     visibilityopened()
                                     Toast.makeText(this@ContentActivity,"Already In Cart",Toast.LENGTH_SHORT).show()
                                     Looper.loop()
-
                                 }
                                 else
                                 {
                                     Cartprod.getInstance(this@ContentActivity).prodDao().insert(cartsingleproduct)
-
                                     Looper.prepare()
                                     Log.d("Success MSG","Data inserted into Room " +this@ContentActivity)
-
                                     val b = Intent(this@ContentActivity,CartActivity::class.java)
                                     startActivity(b)
+                                    Toast.makeText(this@ContentActivity,"Product Added into the Cart",Toast.LENGTH_SHORT).show()
                                     Looper.loop()
                                 }
-
-
                             }
-                            //Toast.makeText(this@ContentActivity,"Product Added into the Cart",Toast.LENGTH_SHORT).show()
-
-
-
                         }
                     }
                 }
@@ -147,52 +143,27 @@ class ContentActivity : AppCompatActivity() {
 
         addtocart.animate().translationY(1920F).setDuration(500);
 
-
-//        contentrating.visibility = View.GONE
-//
-//        contentprice.visibility =View.GONE
-//
-//        contentname.visibility = View.GONE
-//
-//        addtocart.visibility =View.GONE
-//
-//        //addtocartlayout.visibility = View.VISIBLE
-
         addtocartanimation.visibility = View.VISIBLE
     }
 
     fun visibilityopened()
     {
 
+        contentimage.animate().translationY(0F).setDuration(100);
 
+        contentrating.animate().translationY(0F).setDuration(100);
 
-        contentimage.animate().translationY(0F).setDuration(500);
+        contentrating.animate().translationY(0F).setDuration(100);
 
-        contentrating.animate().translationY(0F).setDuration(500);
+        contentprice.animate().translationY(0F).setDuration(100);
 
-        contentrating.animate().translationY(0F).setDuration(500);
+        contentprice.animate().translationY(0F).setDuration(100);
 
-        contentprice.animate().translationY(0F).setDuration(500);
+        contentname.animate().translationY(0F).setDuration(100);
 
-        contentprice.animate().translationY(0F).setDuration(500);
-
-        contentname.animate().translationY(0F).setDuration(500);
-
-        addtocart.animate().translationY(0F).setDuration(500);
-//        contentimage.visibility = View.VISIBLE
-//
-//        contentrating.visibility = View.VISIBLE
-//
-//        contentprice.visibility =View.VISIBLE
-//
-//        contentname.visibility = View.VISIBLE
-//
-//        addtocart.visibility =View.VISIBLE
-
-        //addtocartlayout.visibility = View.GONE
+        addtocart.animate().translationY(0F).setDuration(100);
 
         addtocartanimation.visibility = View.GONE
-        addtocart.visibility = VISIBLE
 
     }
 }

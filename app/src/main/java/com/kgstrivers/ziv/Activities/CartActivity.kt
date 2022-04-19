@@ -78,7 +78,6 @@ class CartActivity : AppCompatActivity() {
                     Handler(Looper.getMainLooper()).postDelayed({
 
                         relative.visibility =View.GONE
-                        bottom.visibility = View.GONE
                         submitanimation1.visibility = View.VISIBLE
 
                         val thread2: Thread = object : Thread() {

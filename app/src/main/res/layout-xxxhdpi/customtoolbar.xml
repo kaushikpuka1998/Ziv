@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#5E10E8">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="175dp"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="10dp"
+            android:text="Ziv"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <ImageView
+
+            android:id="@+id/toolbarcart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="365dp"
+            android:padding="15dp"
+            android:src="@drawable/ic_cart_another" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

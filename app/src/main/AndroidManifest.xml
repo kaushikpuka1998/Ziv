@@ -13,15 +13,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ziv">
+        android:theme="@style/Theme.Ziv"
+
+        >
         <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".Activities.CartActivity"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".Activities.ContentActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>

@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/contentimage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="125dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="135dp"
         android:layout_marginTop="68dp"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -58,11 +58,11 @@
         android:id="@+id/addtocart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="612dp"
         android:backgroundTint="#FF9800"
         android:text="Add To Cart"
-        android:textColor="@color/white"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

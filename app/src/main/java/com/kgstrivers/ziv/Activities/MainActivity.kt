@@ -2,6 +2,8 @@ package com.kgstrivers.ziv.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Looper
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -10,9 +12,14 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kgstrivers.ziv.Model.Products
 import com.kgstrivers.ziv.R
+import com.kgstrivers.ziv.RoomDatabase.Cartprod
 import com.kgstrivers.ziv.RycleviewAdapters.HomePageRecyclerviewAdapter
 import com.kgstrivers.ziv.ViewModels.HomepageViewmodel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.customtoolbar.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +48,14 @@ class MainActivity : AppCompatActivity() {
         initiaterecycleview()
         initiateViewmodel()
         calldata()
+
+        toolbarcart.setOnClickListener(object: View.OnClickListener{
+
+            override fun onClick(p0: View?) {
+                val r = Intent(applicationContext,CartActivity::class.java)
+                startActivity(r)
+            }
+        })
 
 
     }

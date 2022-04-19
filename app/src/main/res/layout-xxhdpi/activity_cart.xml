@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:elevation="4dp"
+    android:layout_height="wrap_content"
+    tools:context=".Activities.CartActivity"
+    >
+
+    <include layout="@layout/customtoolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartrecycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="105dp"
+        android:elevation="5dp"
+        android:padding="5dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="560dp"
+        android:background="#DDC1D3E8">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="2dp"
+            android:drawableLeft="@drawable/ic_baseline_local_shipping_24"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="10dp"
+            android:text="Secure Payments  and Easy Returns"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="600dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="5dp"
+            android:text="Total Cost:" />
+
+
+        <TextView
+            android:id="@+id/totalprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="5dp"
+            android:text="Price" />
+
+        <Button
+            android:id="@+id/finalplacebutton"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="265dp"
+            android:backgroundTint="#FF5722"
+            android:padding="10dp"
+            android:paddingTop="2dp"
+            android:text="Place Order"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:id="@+id/submitanimation1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_speed="1"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/submit_animation"
+        android:visibility="gone"
+        />
+
+
+
+
+</RelativeLayout>
