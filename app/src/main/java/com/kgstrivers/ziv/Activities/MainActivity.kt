@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.kgstrivers.ziv.Model.Products
 import com.kgstrivers.ziv.R
 import com.kgstrivers.ziv.RoomDatabase.Cartprod
