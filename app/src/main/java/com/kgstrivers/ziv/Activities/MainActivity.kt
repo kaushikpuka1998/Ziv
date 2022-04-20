@@ -1,9 +1,11 @@
 package com.kgstrivers.ziv.Activities
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Looper
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -62,6 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initiaterecycleview()
     {
+
+
         recycleview.apply{
             layoutManager = LinearLayoutManager(this@MainActivity)
             val decor = DividerItemDecoration(this@MainActivity,DividerItemDecoration.VERTICAL)
@@ -83,11 +87,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun initiateViewmodel()
     {
+        var dialog = Dialog(this)
+        dialog.setContentView(R.layout.customeprogressbar)
+        dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.drawable))
+        dialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.setCancelable(false)
+
+        dialog.show()
        homepageViewmodel =  ViewModelProvider(this).get(HomepageViewmodel::class.java)
         homepageViewmodel.getProductsLiveDataobserver().observe(this, Observer<Products> {
             if(it!=null)
             {
                homeadapter.productslist = it.products.toMutableList()
+                dialog.dismiss()
                 homeadapter.notifyDataSetChanged()
             }
             else
