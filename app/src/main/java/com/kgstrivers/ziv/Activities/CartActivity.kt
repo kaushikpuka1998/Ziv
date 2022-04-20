@@ -1,6 +1,6 @@
 package com.kgstrivers.ziv.Activities
-
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.*
@@ -10,6 +10,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,8 @@ import com.kgstrivers.ziv.RoomDatabase.Cartprod
 import com.kgstrivers.ziv.RycleviewAdapters.CartPageRecyclerViewAdapter
 import com.kgstrivers.ziv.ViewModels.CartViewModel
 import kotlinx.android.synthetic.main.activity_cart.*
+import kotlinx.android.synthetic.main.customedialog.*
+import kotlinx.android.synthetic.main.customedialog.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -132,16 +136,40 @@ class CartActivity : AppCompatActivity() {
                     {
                         ItemTouchHelper.RIGHT->{
 
-                        GlobalScope.launch(Dispatchers.IO)
-                        {
+
+                            var dialog = Dialog(this@CartActivity)
+                            dialog.setContentView(R.layout.customedialog)
+                            dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.drawable))
+                            dialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+                            dialog.setCancelable(false)
+
+                            dialog.show()
+
+                            dialog.okbuttonanother.setOnClickListener( object  :View.OnClickListener{
+
+                                override fun onClick(p0: View?) {
+                                    dialog.dismiss()
+
+                                    GlobalScope.launch(Dispatchers.IO)
+                                    {
 
 
-                            var willbedeleted = cartadapter.returnproduct(viewHolder.adapterPosition)
+                                        var willbedeleted = cartadapter.returnproduct(viewHolder.adapterPosition)
 
-                            deletedata(this@CartActivity, willbedeleted)
+                                        deletedata(this@CartActivity, willbedeleted)
 
-                        }
+                                    }
+//
+                                }
+                            })
 
+                            dialog.cancelbutton.setOnClickListener( object  :View.OnClickListener{
+
+                                override fun onClick(p0: View?) {
+                                    dialog.dismiss()
+                                    calldata(context)
+                                }
+                            })
                         }
                     }
 

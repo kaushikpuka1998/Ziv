@@ -129,19 +129,19 @@ class ContentActivity : AppCompatActivity() {
 
     fun visibilityclosed()
     {
-        contentimage.animate().translationY(1920F).setDuration(500);
+        contentimage.animate().translationY(5000F).setDuration(500);
 
-        contentrating.animate().translationY(1920F).setDuration(500);
+        contentrating.animate().translationY(5000F).setDuration(500);
 
-        contentrating.animate().translationY(1920F).setDuration(500);
+        contentrating.animate().translationY(5000F).setDuration(500);
 
-        contentprice.animate().translationY(1920F).setDuration(500);
+        contentprice.animate().translationY(5000F).setDuration(500);
 
-        contentprice.animate().translationY(1920F).setDuration(500);
+        contentprice.animate().translationY(5000F).setDuration(500);
 
-        contentname.animate().translationY(1920F).setDuration(500);
+        contentname.animate().translationY(5000F).setDuration(500);
 
-        addtocart.animate().translationY(1920F).setDuration(500);
+        addtocart.animate().translationY(5000F).setDuration(500);
 
         addtocartanimation.visibility = View.VISIBLE
     }
