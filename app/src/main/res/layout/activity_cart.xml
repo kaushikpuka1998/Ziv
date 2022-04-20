@@ -47,29 +47,25 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-
+    <RelativeLayout
         android:id="@+id/bottom"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="vertical"
-        android:outlineAmbientShadowColor="@color/black"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
-
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="55dp"
+            android:layout_marginTop="720dp">
 
             <TextView
+                android:id="@+id/totcost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="Total Cost:"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/roboto_bold"
                 android:padding="5dp"
-                android:layout_marginTop="5dp"/>
+                android:text="Total Cost:" />
 
 
             <TextView
@@ -78,26 +74,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="95dp"
                 android:layout_marginTop="5dp"
-                android:padding="5dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Price"/>
+                android:padding="5dp"
+                android:text="Price" />
 
             <Button
                 android:id="@+id/finalplacebutton"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:text="Place Order"
                 android:layout_marginLeft="265dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
-                android:paddingTop="2dp"
-                android:textAllCaps="false"
                 android:backgroundTint="#FF5722"
-                />
+                android:padding="10dp"
+                android:paddingTop="2dp"
+                android:text="Place Order"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
         </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <com.airbnb.lottie.LottieAnimationView
 

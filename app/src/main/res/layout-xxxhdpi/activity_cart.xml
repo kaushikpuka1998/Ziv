@@ -30,7 +30,7 @@
         android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="680dp"
+        android:layout_marginTop="540dp"
         android:background="#DDC1D3E8">
 
 
@@ -47,45 +47,54 @@
 
     </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="730dp">
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/roboto_bold"
-            android:padding="5dp"
-            android:text="Total Cost:" />
+            android:layout_marginTop="600dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="5dp"
+                android:text="Total Cost:" />
 
 
-        <TextView
-            android:id="@+id/totalprice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="95dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="@font/roboto_bold"
-            android:padding="5dp"
-            android:text="Price" />
+            <TextView
+                android:id="@+id/totalprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="5dp"
+                android:text="Price" />
 
-        <Button
-            android:id="@+id/finalplacebutton"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="265dp"
-            android:backgroundTint="#FF5722"
-            android:padding="10dp"
-            android:paddingTop="2dp"
-            android:text="Place Order"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
+            <Button
+                android:id="@+id/finalplacebutton"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="265dp"
+                android:backgroundTint="#FF5722"
+                android:padding="10dp"
+                android:paddingTop="2dp"
+                android:text="Place Order"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
     <com.airbnb.lottie.LottieAnimationView
 

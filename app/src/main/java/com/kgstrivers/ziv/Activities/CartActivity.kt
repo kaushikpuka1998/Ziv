@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -28,23 +29,23 @@ import com.kgstrivers.ziv.RoomDatabase.Cartprod
 import com.kgstrivers.ziv.RycleviewAdapters.CartPageRecyclerViewAdapter
 import com.kgstrivers.ziv.ViewModels.CartViewModel
 import kotlinx.android.synthetic.main.activity_cart.*
+import kotlinx.android.synthetic.main.activity_content.*
 import kotlinx.android.synthetic.main.customedialog.*
 import kotlinx.android.synthetic.main.customedialog.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import okhttp3.internal.http.HTTP_GONE
 
 
 class CartActivity : AppCompatActivity() {
 
     lateinit var cartadapter :CartPageRecyclerViewAdapter
     lateinit var cartpageViewmodel: CartViewModel
-
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
-
         initiaterecycleview()
 
         initiateViewmodel()
@@ -61,7 +62,6 @@ class CartActivity : AppCompatActivity() {
 
         finalplacebutton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
-
 
                 GlobalScope.launch(Dispatchers.IO) {
 
@@ -82,12 +82,13 @@ class CartActivity : AppCompatActivity() {
                     Handler(Looper.getMainLooper()).postDelayed({
 
                         relative.visibility =View.GONE
+                        bottom.visibility =View.GONE
                         submitanimation1.visibility = View.VISIBLE
-
                         val thread2: Thread = object : Thread() {
                             override fun run() {
                                 try {
                                     sleep(7000)
+
                                     submitanimation1.playAnimation()
 
                                 } catch (e: Exception) {

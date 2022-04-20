@@ -8,23 +8,23 @@
         <entry key="app/src/main/res/drawable/drawable.xml" value="0.124" />
         <entry key="app/src/main/res/drawable/rounded.xml" value="0.35" />
         <entry key="app/src/main/res/layout-anydpi/activity_cart.xml" value="0.35885416666666664" />
-        <entry key="app/src/main/res/layout-hdpi/activity_cart.xml" value="0.3189814814814815" />
+        <entry key="app/src/main/res/layout-hdpi/activity_cart.xml" value="0.19296875" />
         <entry key="app/src/main/res/layout-hdpi/activity_content.xml" value="0.48333333333333334" />
         <entry key="app/src/main/res/layout-hdpi/customtoolbar.xml" value="0.86125" />
         <entry key="app/src/main/res/layout-hdpi/singleelementrecyclerview.xml" value="0.86125" />
-        <entry key="app/src/main/res/layout-ldpi/activity_cart.xml" value="1.0" />
+        <entry key="app/src/main/res/layout-ldpi/activity_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout-ldpi/activity_content.xml" value="1.5949074074074074" />
         <entry key="app/src/main/res/layout-ldpi/customtoolbar.xml" value="1.0" />
         <entry key="app/src/main/res/layout-ldpi/singleelementrecyclerview.xml" value="1.5949074074074074" />
-        <entry key="app/src/main/res/layout-mdpi/activity_cart.xml" value="1.0" />
+        <entry key="app/src/main/res/layout-mdpi/activity_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout-mdpi/activity_content.xml" value="1.0" />
         <entry key="app/src/main/res/layout-mdpi/customtoolbar.xml" value="1.4354166666666666" />
         <entry key="app/src/main/res/layout-mdpi/singleelementrecyclerview.xml" value="1.4354166666666666" />
-        <entry key="app/src/main/res/layout-xhdpi/activity_cart.xml" value="0.375" />
+        <entry key="app/src/main/res/layout-xhdpi/activity_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout-xhdpi/activity_content.xml" value="0.53828125" />
         <entry key="app/src/main/res/layout-xhdpi/customtoolbar.xml" value="0.53828125" />
         <entry key="app/src/main/res/layout-xhdpi/singleelementrecyclerview.xml" value="0.35885416666666664" />
-        <entry key="app/src/main/res/layout-xxhdpi/activity_cart.xml" value="0.25729166666666664" />
+        <entry key="app/src/main/res/layout-xxhdpi/activity_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout-xxhdpi/activity_content.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout-xxhdpi/customtoolbar.xml" value="0.12473958333333333" />
         <entry key="app/src/main/res/layout-xxhdpi/singleelementrecyclerview.xml" value="0.35885416666666664" />
@@ -32,11 +32,11 @@
         <entry key="app/src/main/res/layout-xxxhdpi/activity_content.xml" value="0.269140625" />
         <entry key="app/src/main/res/layout-xxxhdpi/customtoolbar.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout-xxxhdpi/singleelementrecyclerview.xml" value="0.35885416666666664" />
-        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.25729166666666664" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_content.xml" value="0.19296875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25742574257425743" />
         <entry key="app/src/main/res/layout/customedialog.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/customeprogressbar.xml" value="0.1625" />
+        <entry key="app/src/main/res/layout/customeprogressbar.xml" value="0.67" />
         <entry key="app/src/main/res/layout/customtoolbar.xml" value="1.2994011976047903" />
         <entry key="app/src/main/res/layout/singlecartitem.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/singleelementrecyclerview.xml" value="0.17942708333333332" />
